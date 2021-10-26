@@ -5,28 +5,23 @@ on:
     branches:
       - master
 jobs:
-  steps:
-
-    - name: Checkout
-
-      uses: actions/checkout@v2
-
-    - name: Deployment
-
-      uses: Tofik100/test@master
-
+  test:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.1.0
       with:
+        fetch-depth: 2
+    - name: test
+      uses: Tofik100/test@master
+      with:
+        
+        ssh-user: ${{ secrets.SSH_USERNAME }}
 
-        host: ${{ secrets.SSH_HOST }}
+        ssh-password: ${{ secrets.SSH_PASSWORD }}
 
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        ssh-host: ${{ secrets.SSH_HOST }}
 
-        username: ${{ secrets.SSH_USERNAME }}
+        private-ssh-key: ${{ secrets.SSH_KEY }}
 
-        script: |
-
-          cd /var/www/html/
-
-          git checkout -f 
-
-          git pull
+        ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
