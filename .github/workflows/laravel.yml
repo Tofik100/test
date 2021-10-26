@@ -16,8 +16,12 @@ jobs:
       uses: Tofik100/test@master
       with:
         
-        ssh_host: "51.68.94.64"
-        ssh_user: "root"
-        ssh_port: 22
+        ssh_host: ${{ secrets.SSH_HOST }}
+
         private_ssh_key: ${{ secrets.SSH_KEY }}
+
         ssh_known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+
+        ssh_user: ${{ secrets.SSH_USERNAME }}
+
+        ssh_password: ${{ secrets.SSH_PASSWORD }}
