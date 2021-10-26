@@ -21,3 +21,5 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
 
         username: ${{ secrets.SSH_USERNAME }}
+
+        ssh_known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
