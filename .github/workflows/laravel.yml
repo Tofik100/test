@@ -15,6 +15,11 @@ jobs:
     - name: test
       uses: Tofik100/test@master
       with:
-        ftp-server: ${{ secrets.FTP_SERVER }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        
+        host: ${{ secrets.SSH_HOST }}
+
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+        ssh_known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+
+        username: ${{ secrets.SSH_USERNAME }}
