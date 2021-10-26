@@ -16,10 +16,10 @@ jobs:
       uses: Tofik100/test@master
       with:
         
-        host: ${{ secrets.SSH_HOST }}
+        host: "${{ secrets.SSH_HOST }}"
 
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        key: "${{ secrets.SSH_PRIVATE_KEY }}"
 
-        username: ${{ secrets.SSH_USERNAME }}
+        username: "${{ secrets.SSH_USERNAME }}"
 
-        ssh_known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+        ssh_known_hosts: "${{ secrets.SSH_KNOWN_HOSTS }}"
