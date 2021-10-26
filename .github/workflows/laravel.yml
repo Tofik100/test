@@ -18,7 +18,7 @@ jobs:
         
         ssh_host: ${{ secrets.SSH_HOST }}
 
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        private_ssh_key: ${{ secrets.SSH_KEY }}
 
         ssh_known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
 
