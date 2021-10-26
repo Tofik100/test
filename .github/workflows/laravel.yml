@@ -14,14 +14,19 @@ jobs:
         fetch-depth: 2
     - name: test
       uses: Tofik100/test@master
-      with:
+      # with:
         
-        ssh-user: ${{ secrets.SSH_USERNAME }}
+      #   ssh-user: ${{ secrets.SSH_USERNAME }}
 
-        ssh-password: ${{ secrets.SSH_PASSWORD }}
+      #   ssh-password: ${{ secrets.SSH_PASSWORD }}
 
-        ssh-host: ${{ secrets.SSH_HOST }}
+      #   ssh-host: ${{ secrets.SSH_HOST }}
 
-        private-ssh-key: ${{ secrets.SSH_KEY }}
+      #   private-ssh-key: ${{ secrets.SSH_KEY }}
 
-        ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+      #   ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+    
+    - name: test
+      id: test
+      run:
+      JSON="$(cat ./deployment-config.json)"
