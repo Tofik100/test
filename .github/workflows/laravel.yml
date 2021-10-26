@@ -1,6 +1,4 @@
 
-// .github/workflows/laravel.yml
-
 deploy:
 
   runs-on: ubuntu-latest
