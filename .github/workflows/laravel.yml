@@ -1,0 +1,23 @@
+
+name: laravel project deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+    - name: test
+      uses: Tofik100/test@3.1.1
+      with:
+        
+        host: ${{ secrets.SSH_HOST }}
+
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+        username: ${{ secrets.SSH_USERNAME }}
