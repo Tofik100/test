@@ -16,12 +16,16 @@ jobs:
       uses: Tofik100/test@master
       with:
         
-        ssh_host: ${{ secrets.SSH_HOST }}
+        host: ${{ secrets.SSH_HOST }}
 
-        private_ssh_key: ${{ secrets.SSH_KEY }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-        ssh_known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+        username: ${{ secrets.SSH_USERNAME }}
 
-        ssh_user: ${{ secrets.SSH_USERNAME }}
+        script: |
 
-        ssh_password: ${{ secrets.SSH_PASSWORD }}
+          cd /var/www/html/test
+
+          git checkout -f 
+
+          git pull
