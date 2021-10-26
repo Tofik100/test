@@ -1,31 +1,25 @@
 
-deploy:
-
-  runs-on: ubuntu-latest
-
-  steps:
-
-    - name: Checkout
-
-      uses: actions/checkout@v2
-
-    - name: Deployment
-
-      uses: appleboy/ssh-action@main
-
+name: laravel project deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.1.0
       with:
-        username: ${{ secrets.SSH_USERNAME }}
+        fetch-depth: 2
+    - name: test
+      uses: Tofik100/test@master
+      with:
+        
+        host: ${{ secrets.SSH_HOST }}
 
         key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
 
-        ssh_known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-
-        script: |
-
-          cd /var/www/html/
-
-          git checkout -f 
-
-          git pull
+        ssh_known_hosts: ${{ secrets.SSH_USERNAME }}
