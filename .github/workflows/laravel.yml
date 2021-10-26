@@ -16,12 +16,8 @@ jobs:
       uses: Tofik100/test@master
       with:
         
-        ssh-user: ${{ secrets.SSH_USERNAME }}
+        host: ${{ secrets.SSH_HOST }}
 
-        # ssh-password: ${{ secrets.SSH_PASSWORD }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-        ssh-host: ${{ secrets.SSH_HOST }}
-
-        private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-        # ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+        username: ${{ secrets.SSH_USERNAME }}
