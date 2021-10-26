@@ -24,17 +24,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - name: test
+        uses: Tofik100/test@master
+        with:
+          
+          host: ${{ secrets.SSH_HOST }}
 
-     with:
-        fetch-depth: 2
-    - name: test
-      uses: Tofik100/test@master
-      with:
-        
-        host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh_known_hosts: ${{ secrets.SSH_USERNAME }}
 
-        ssh_known_hosts: ${{ secrets.SSH_USERNAME }}
-
-        username: ${{ secrets.SSH_USERNAME }}
+          username: ${{ secrets.SSH_USERNAME }}
