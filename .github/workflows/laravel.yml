@@ -9,12 +9,19 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.1.0
+    - uses: ./.github/actions/checkout@v2.1.0
       with:
         fetch-depth: 2
     - name: test
       uses: Tofik100/test@master
       with:
-        ftp-server: ${{ secrets.FTP_SERVER }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        
+        ssh-user: ${{ secrets.SSH_USERNAME }}
+
+        ssh-password: ${{ secrets.SSH_PASSWORD }}
+
+        ssh-host: ${{ secrets.SSH_HOST }}
+
+        private-ssh-key: ${{ secrets.SSH_KEY }}
+
+        ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
