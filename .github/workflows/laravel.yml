@@ -4,18 +4,18 @@ on:
   push:
     branches:
       - master
-jobs:
-  test:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.1.0
-      with:
-        fetch-depth: 2
-    - name: test
+steps:
+
+    - name: Checkout
+
+      uses: actions/checkout@v2
+
+    - name: Deployment
+
       uses: Tofik100/test@master
+
       with:
-        
+
         host: ${{ secrets.SSH_HOST }}
 
         key: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -24,7 +24,7 @@ jobs:
 
         script: |
 
-          cd /var/www/html/test
+          cd /var/www/html/
 
           git checkout -f 
 
