@@ -13,7 +13,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - uses: ./.github/actions/checkout@v2.1.0
-        with:
+      - with:
           fetch-depth: 2
     - name: test
       uses: Tofik100/test@master
