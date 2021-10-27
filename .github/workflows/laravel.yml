@@ -1,19 +1,21 @@
-name: CD
- 
+
+name: laravel project deploy
 on:
   push:
-    branches:  master
- 
+    branches:
+      - master
 jobs:
-  deploy:
+  test:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: ./.github/actions/checkout@v2.1.0
       with:
-    - name: Deploy to master
+        fetch-depth: 2
+    - name: test
       uses: Tofik100/test@master
       with:
-        username: 'root'
-        host: '51.68.94.64'
+        username: root
+        host: 51.68.94.64
         password: ${{ secrets.SSH_PASSWORD }}
-        script: 'cd /var/www/html && ./deployer.sh'
+        script: 'cd /var/www/html && ./server_deploy.sh'
