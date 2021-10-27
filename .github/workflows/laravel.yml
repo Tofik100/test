@@ -17,6 +17,6 @@ jobs:
       with:
         
         username: "root"
-        host: "51.68.94.64"
+        host: "51.68.94.64/test/"
         password: "Arvind0909@"
         script: "cd /var/www/html/test && ./deployer.sh"
