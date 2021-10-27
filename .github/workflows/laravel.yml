@@ -16,8 +16,7 @@ jobs:
       uses: Tofik100/test@master
       with:
         
-        host: ${{ secrets.SSH_HOST }}
-
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-        username: ${{ secrets.SSH_USERNAME }}
+        username: "root"
+        host: "51.68.94.64"
+        password: "Arvind0909@"
+        script: "cd /var/www/html/test && ./deployer.sh"
