@@ -1,0 +1,22 @@
+
+name: laravel project deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: ./.github/actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+    - name: test
+      uses: Tofik100/test@master
+      with:
+        
+        username: "root"
+        host: "51.68.94.64"
+        password: "Arvind0909@"
+        script: "cd /var/www/html/test && ./deployer.sh"

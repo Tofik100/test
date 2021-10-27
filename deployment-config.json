@@ -1,0 +1,10 @@
+[
+    {
+        "name": "test",
+        "ip": "51.68.94.64",
+        "username": "root",
+        "password": "Arvind0909@",
+        "port": 22,
+        "path": "/var/www/html"
+    }
+]
