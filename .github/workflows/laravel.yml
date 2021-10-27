@@ -15,7 +15,7 @@ jobs:
     - name: test
       uses: Tofik100/test@master
       with:
-        username: 'root'
-        host: '51.68.94.64/test'
+        username: "root"
+        host: "51.68.94.64"
         password: ${{ secrets.SSH_PASSWORD }}
-        script: 'cd /var/www/html/test && ./server_deploy.sh'
+        script: 'cd /var/www/html/test && ./deployer.sh'
