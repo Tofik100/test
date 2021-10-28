@@ -9,8 +9,8 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      id: test
-      - uses: ./.github/actions/checkout@v2.1.0
+     - id: test
+        uses: ./.github/actions/checkout@v2.1.0
       with:
         fetch-depth: 2
     - name: test
