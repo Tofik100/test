@@ -1,9 +1,10 @@
-    name: DEV Deploy
-    
-    on:
-      workflow_dispatch:
-    
-    jobs:
+
+name: laravel project deploy
+on:
+  push:
+    branches:
+      - master
+     jobs:
     
       deploy:
         runs-on: ubuntu-latest
