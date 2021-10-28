@@ -5,18 +5,38 @@ on:
     branches:
       - master
 jobs:
-  test:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - uses: ./.github/actions/checkout@v2.1.0
-      with:
-        fetch-depth: 2
-    - name: test
-      uses: Tofik100/test@master
-      with:
-        
-        username: "root"
-        host: "51.68.94.64/test"
-        password: "Arvind0909@"
-        script: "cd /var/www/html/test && ./deployer.sh"
+      deploy:
+        runs-on: ubuntu-latest
+    
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+    
+          - name: Deployment
+    
+            uses: Tofik100/test@master
+    
+            with:
+              host: ${{ secrets.HOST }}
+              username: ${{ secrets.USERNAME }}
+              key: ${{ secrets.KEY }}
+    
+              script: |
+                cd /var/www/html/test
+                
+                php artisan down
+                
+                git checkout -f
+                git branch -u origin/dev
+                git pull
+                
+                composer install --optimize-autoloader --no-dev
+                
+                npm install
+                npm update
+                npm run production
+                
+                php artisan cache:clear
+                php artisan view:clear
+                php artisan config:cache
+                php artisan up
