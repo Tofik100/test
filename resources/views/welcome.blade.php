@@ -55,11 +55,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-<<<<<<< HEAD
-                                    Laravel 8 to weel Done has wonderfull <b>Core Techies Done Toufeeq Pardeshi</b> hello, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-=======
-                                    Laravel 8  hello weel Done has wonderfull  test<b>Core Techies Done Toufeeq Pardeshi</b> hello, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
->>>>>>> 8a05ec82f20a98729cb0475aa1e2499f098d4707
+                                  Tofik pardeshi Laravel 8 to weel Done has wonderfull <b>Core Techies Done Toufeeq Pardeshi</b> hello, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
                                 </div>
                             </div>
                         </div>
